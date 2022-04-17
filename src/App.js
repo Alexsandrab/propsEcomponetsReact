@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//utilizando props e components no react
+
+const Bemvindo = (props) => {
+    return(
+        <div>
+            <Sobre nome = {props.nome} idade = {props.idade} cargo = {props.cargo}/>
+            <hr/>
+        </div>
+    );
 }
 
+const Sobre = (props) => {
+    return(
+        <div>
+            <h2>Nome: {props.nome}</h2>
+            <h2>Cargo: {props.cargo}</h2>
+            <h2>Idade: {props.idade}</h2>
+        </div>
+    );
+}
+
+function App(){
+    return(
+        <div>
+        <Bemvindo nome= "Sandra" idade = "26" cargo = "Programadora"/>
+        <Bemvindo nome= "Rute" idade = "23" cargo = "Recepção"/>
+        <Bemvindo nome = "Cleiton" idade = "5" cargo = "Motorista"/>;
+    </div>
+    )
+}
 export default App;
